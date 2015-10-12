@@ -39,6 +39,14 @@ class MeteorologistController < ApplicationController
 
     @summary_of_next_several_days = parsed_data_w["daily"]["summary"]
 
+    # var map;
+    # function initMap() {
+    #     map = new google.maps.Map(document.getElementById('map'), {
+    #     center: {lat: -34.397, lng: 150.644},
+    #     zoom: 8
+    #     });
+    # }
+
     render("street_to_weather.html.erb")
   end
 end
