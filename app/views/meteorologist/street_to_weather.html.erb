@@ -18,3 +18,25 @@
   <dt>Outlook for next several days</dt>
   <dd><%= @summary_of_next_several_days %></dd>
 </dl>
+
+<style>
+      #map {
+        height: 480px;
+        width: 480px; // or whatever dimensions you want
+      }
+    </style>
+
+    <div id="map"></div>
+
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: <%=@lat%>, lng: <%=@lng%>},
+          zoom: 8
+        });
+      }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
